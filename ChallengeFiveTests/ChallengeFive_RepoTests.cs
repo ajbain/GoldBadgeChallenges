@@ -42,5 +42,53 @@ namespace ChallengeFiveTests
 
             Assert.IsTrue(directoryHasContent);
         }
+
+        [TestMethod]
+        public void GetCustomerByLastName_ShouldReturnCorrectString()
+        {
+            {
+                Customer customer = new Customer("John", "Doe", CustType.Past);
+                Customer_Repo repo = new Customer_Repo();
+
+                repo.AddCustomer(customer);
+                string lastName = "Doe";
+
+                Customer searchResult = repo.GetCustomerByLastName(lastName);
+
+
+                Assert.AreEqual(lastName, searchResult.LastName);
+
+            }
+
+           
+        }
+        [TestMethod]
+        public void UpdateExistingCustomer_ShouldReturnTrue()
+        {
+            Customer_Repo repo = new Customer_Repo();
+            Customer oldCustomer = new Customer("John", "Doe", CustType.Past);
+
+            repo.AddCustomer(oldCustomer);
+            Customer newCustomer = new Customer("Jon", "Doe", CustType.Present);
+
+            bool updateResult = repo.UpdateCustomer(oldCustomer.LastName, newCustomer);
+
+            Assert.IsTrue(updateResult);
+        }
+        [TestMethod]
+        public void DeleteExistingContent_ShouldReturnTrue()
+        {
+
+            Customer_Repo repo = new Customer_Repo();
+            Customer customer = new Customer("Jane", "Doe", CustType.Potential);
+            repo.AddCustomer(customer);
+
+            Customer oldCust = repo.GetCustomerByLastName("Doe");
+
+            bool removeResults = repo.DeleteCustomer(oldCust);
+
+            Assert.IsTrue(removeResults);
+        }
+        
     }
 }
