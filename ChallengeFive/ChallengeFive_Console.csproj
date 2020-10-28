@@ -50,5 +50,11 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ChallengeFive_Repository\ChallengeFive_Repository.csproj">
+      <Project>{91907A1C-3ACE-463A-A04E-2D50B2230DCD}</Project>
+      <Name>ChallengeFive_Repository</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
