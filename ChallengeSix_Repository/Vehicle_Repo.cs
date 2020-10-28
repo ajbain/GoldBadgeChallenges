@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ChallengeSix_Repository
 {
-    class Vehicle_Repo
+     public class Vehicle_Repo
     {
         private List<Vehicle> _vehicleDirectory = new List<Vehicle>();
         //crud methods
@@ -49,7 +49,7 @@ namespace ChallengeSix_Repository
                 oldVehicle.Make = updatedVehicle.Make;
                 oldVehicle.Model = updatedVehicle.Model;
                 oldVehicle.Year = updatedVehicle.Year;
-                oldVehicle.Mileage = updatedVehicle.Mileage;
+                oldVehicle.MileagePerGallon = updatedVehicle.MileagePerGallon;
                 oldVehicle.VehicleType = updatedVehicle.VehicleType;
                 return true;
             }

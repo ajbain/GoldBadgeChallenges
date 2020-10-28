@@ -13,7 +13,7 @@ namespace ChallengeSix_Repository
         public string Make { get; set; }
         public string Model { get; set; }
         public string Year { get; set; }
-        public double Mileage { get; set; }
+        public double MileagePerGallon { get; set; }
         public VehicleType VehicleType { get; set; }
         public bool isGreen
         {
@@ -31,12 +31,12 @@ namespace ChallengeSix_Repository
 
         }
         public Vehicle() { }
-        public Vehicle( string make, string model, string year, double mileage, VehicleType vehicleType)
+        public Vehicle( string make, string model, string year, double mileagePerGal, VehicleType vehicleType)
         {
             Make = make;
             Model = model;
             Year = year;
-            Mileage = mileage;
+            MileagePerGallon = mileagePerGal;
             VehicleType = vehicleType;
         }
 
