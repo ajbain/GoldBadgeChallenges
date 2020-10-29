@@ -13,8 +13,29 @@ namespace ChallengeSix_Console
         private Vehicle_Repo _repo = new Vehicle_Repo();
         public void Run()
         {
-            //SeedContent();
+            SeedContent();
             Menu();
+
+        }
+
+        private void SeedContent()
+        {
+            Vehicle modelS = new Vehicle(
+               "Tesla", "Model S", "2020", 402.0, VehicleType.Electric);
+            _repo.AddVehicle(modelS);
+
+            Vehicle clarity = new Vehicle(
+                "Honda", "Clarity", "2021", 340.0, VehicleType.Hybrid);
+            _repo.AddVehicle(clarity);
+
+            Vehicle prius = new Vehicle(
+                "Toyota", "Prius", "2020", 519.2, VehicleType.Hybrid);
+            _repo.AddVehicle(prius);
+
+            Vehicle fusion = new Vehicle(
+                "Ford", "Fusion", "2020", 400.0, VehicleType.Gas);
+            _repo.AddVehicle(fusion);
+
 
         }
 
@@ -134,11 +155,11 @@ namespace ChallengeSix_Console
             Console.WriteLine("Please enter a Year for the vehicle");
             newVehicle.Year = Console.ReadLine();
 
-            Console.WriteLine("Please enter the mileage per gallon that this vehicle gets. If it is an electric car, please enter the miles per charge.");
+            Console.WriteLine("Please enter the mileage per TANK that this vehicle gets. If it is an electric car, please enter the miles per charge.");
             string mileageAsString = Console.ReadLine();
             double mileageAsDouble = double.Parse(mileageAsString);
             newVehicle.MileagePerGallon = mileageAsDouble;
-            
+
 
             Console.WriteLine("Please select the numbers listed below to indicate what type of category this vehicle falls under:");
             Console.WriteLine("1. Gas");
@@ -197,32 +218,70 @@ namespace ChallengeSix_Console
                     Console.WriteLine("Enter a new Make");
                     string newMake = Console.ReadLine();
                     oldVehicle.Make = newMake;
-                    //bool wasSuccessful = _repo.UpdateVehicle(firstName, newFirstName);
+                    bool isChangingMake = _repo.UpdateVehicle(make, newVehicle);
 
-                    //if (wasSuccessful)
-                    //{
-                    //    Console.WriteLine("Item successfully updated");
-                    //}
-                    //else
-                    //{
-                    //    Console.WriteLine($"Error: could not update {firstName}");
-                    //}
+                    if (!isChangingMake)
+                    {
+                        Console.WriteLine("Item successfully updated");
+                    }
+                    else
+                    {
+                        Console.WriteLine($"Error: could not update {make}");
+                    }
+                    Console.WriteLine("Press Any Key to Continue");
+                    Console.ReadLine();
                     break;
                 case "2":
                     Console.WriteLine("Enter a new Model");
                     string newModel = Console.ReadLine();
                     oldVehicle.Model = newModel;
+                    bool isChangingModel = _repo.UpdateVehicle(newModel, newVehicle);
+
+                    if (!isChangingModel)
+                    {
+                        Console.WriteLine("Item successfully updated");
+                    }
+                    else
+                    {
+                        Console.WriteLine($"Error: could not update {newModel}");
+                    }
+                    Console.WriteLine("Press Any Key to Continue");
+                    Console.ReadLine();
                     break;
                 case "3":
                     Console.WriteLine("Enter a new Year as YYYY ");
                     string newYear = Console.ReadLine();
                     oldVehicle.Year = newYear;
+                    bool isChangingYear = _repo.UpdateVehicle(newYear, newVehicle);
+
+                    if (!isChangingYear)
+                    {
+                        Console.WriteLine("Item successfully updated");
+                    }
+                    else
+                    {
+                        Console.WriteLine($"Error: could not update {newYear}");
+                    }
+                    Console.WriteLine("Press Any Key to Continue");
+                    Console.ReadLine();
                     break;
                 case "4":
                     Console.WriteLine("Enter the mileage per gallon/charge of this vehicle:");
                     string mileageAsString = Console.ReadLine();
                     double mileageAsDouble = double.Parse(mileageAsString);
                     oldVehicle.MileagePerGallon = mileageAsDouble;
+                    bool isChangingMileage = _repo.UpdateVehicle(mileageAsString, newVehicle);
+
+                    if (!isChangingMileage)
+                    {
+                        Console.WriteLine("Item successfully updated");
+                    }
+                    else
+                    {
+                        Console.WriteLine($"Error: could not update {mileageAsString}");
+                    }
+                    Console.WriteLine("Press Any Key to Continue");
+                    Console.ReadLine();
                     break;
                 case "5":
 
@@ -247,6 +306,7 @@ namespace ChallengeSix_Console
                             Console.WriteLine("You entered an incorrect number, please try again");
                             break;
                     }
+
                     break;
                 default:
                     break;
