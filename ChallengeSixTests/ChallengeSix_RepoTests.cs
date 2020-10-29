@@ -1,4 +1,5 @@
 ﻿ using System;
+using System.Collections.Generic;
 using ChallengeSix_Repository;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
@@ -10,15 +11,11 @@ namespace ChallengeSixTests
         [TestMethod]
         public void AddContentToCustDirect_ShouldReturnTrue()
         {
-            //arrange
             Vehicle vehicle = new Vehicle();
             Vehicle_Repo repo = new Vehicle_Repo();
 
-            //act
             bool addResult = repo.AddVehicle(vehicle);
 
-
-            //assert
             Assert.IsTrue(addResult);
         }
 

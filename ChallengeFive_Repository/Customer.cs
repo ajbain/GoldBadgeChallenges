@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ChallengeFive_Repository
 { 
-    public enum CustType { Past, Present, Potential}
+    public enum CustType { Past =1, Present, Potential}
     public class Customer
     {// pseudo code
         public string FirstName { get; set; }
