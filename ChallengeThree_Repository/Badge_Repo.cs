@@ -20,16 +20,12 @@ namespace ChallengeThree_Repository
             bool wasAdded = (_badgeDictionary.Count > startingCount) ? true : false;
             return wasAdded;
         }
-        //create dictionary?
-        //public bool AddBadge(Badge badge)
-        //{
-        //    int startingCount = _badgeDirectory.Count;
-        //    _badgeDirectory.Add(badge);
-        //    bool wasAdded = (_badgeDirectory.Count > startingCount) ? true : false;
-        //    return wasAdded;
-        //}
+        
         //read badge
-
+        public List<Badge> GetBadges()
+        {
+            return _badgeDirectory;
+        }
 
 
 

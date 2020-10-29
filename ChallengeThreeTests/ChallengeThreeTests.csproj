@@ -51,9 +51,10 @@
   <ItemGroup>
     <Compile Include="ChallengeThree_RepoTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ChallengeThree_Tests.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="packages.config" />
+    <None Include="ChallengeThree_Tests.config" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\ChallengeThree_Repository\ChallengeThree_Repository.csproj">
