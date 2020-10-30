@@ -8,7 +8,7 @@ namespace ChallengeThree_Repository
 {
     public class Badge_Repo
     {
-        private List<Badge> _badgeDirectory = new List<Badge>();
+        //private List<Badge> _badgeDirectory = new List<Badge>();
         private Dictionary<int, List<string>> _badgeDictionary = new Dictionary<int, List<string>>();
         
         //create
@@ -27,9 +27,49 @@ namespace ChallengeThree_Repository
             return _badgeDictionary;
         }
 
+        //read badge by id??
 
-
+        public List<string> GetBadgeByID(int ID)
+        {
+            if (_badgeDictionary.ContainsKey(ID))
+            {
+                return _badgeDictionary[ID];
+            }
+            else
+            {
+                return null;
+            }
+            //foreach (Badge badge in _badgeDirectory)
+            //{
+            //    if (badge.BadgeID == ID)
+            //    {
+            //        return badge;
+            //    }
+            //}
+            
+        }
         //updateBadge
+
+
+
+
+
+
+
+        //public Badge GetBadgeID (int idNum)
+        //{
+        //    foreach (KeyValuePair<int, List<string>> badges in _badgeDictionary)
+        //    {
+        //        if(badges.Key == idNum)
+        //        {
+        //            return badges;
+        //        }
+        //    }
+        //    return null;
+        //}
+
+
+
 
 
 

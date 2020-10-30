@@ -11,11 +11,15 @@ namespace ChallengeSixTests
         [TestMethod]
         public void AddContentToCustDirect_ShouldReturnTrue()
         {
+            //arrange
             Vehicle vehicle = new Vehicle();
             Vehicle_Repo repo = new Vehicle_Repo();
 
+            //act
             bool addResult = repo.AddVehicle(vehicle);
 
+
+     
             Assert.IsTrue(addResult);
         }
 

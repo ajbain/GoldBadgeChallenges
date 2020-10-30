@@ -31,7 +31,22 @@ namespace ChallengeThreeTests
             Assert.IsTrue(directoryHasContent);
         }
         /////run thru debugger again to figure out why not working... not good test method at the moment
+        ///
+        [TestMethod]
+        public void GetBadgeByInt_ShouldReturnTrue()
+        {
+            Badge_Repo repo = new Badge_Repo();
+            List<string> listOfDoors = new List<string>()
+            {
+                "a2",
+                "b1"
+            };
+            Badge badge = new Badge();
+            repo.CreateBadge(badge.BadgeID, listOfDoors);
+            int idNum = 001;
+
+        }
     }
 
 
-}
+} 
