@@ -9,44 +9,59 @@ namespace ChallengeThreeTests
     [TestClass]
     public class ChallengeThree_RepoTests
     {
+
         [TestMethod]
-        public void AddBadgeToDictionary_ShouldReturnTrue()
+        public void AddBadgeToList_ShouldReturnTrue()
         {
             Badge badge = new Badge();
             Badge_Repo repo = new Badge_Repo();
 
-            bool addResult = repo.CreateBadge(badge.BadgeID, badge.DoorNames);
-
+            bool addResult = repo.AddBadge(badge);
             Assert.IsTrue(addResult);
         }
-        [TestMethod]
-        public void ShowBadgeDirectory_ShouldReturnTrue()
-        {
-            Badge badge = new Badge();
-            Badge_Repo repo = new Badge_Repo();
+    }
+}
+    //    [TestMethod]
+    //    public void ShowBadgeDirectory_ShouldReturnTrue()
+    //    {
+    //        Badge badge = new Badge();
+    //        Badge_Repo repo = new Badge_Repo();
 
-            repo.CreateBadge(badge.BadgeID, badge.DoorNames );
-            Dictionary<int, List<string>> directory = repo.GetBadges();
-            bool directoryHasContent = directory.ContainsKey(badge.BadgeID);
-            Assert.IsTrue(directoryHasContent);
-        }
-        /////run thru debugger again to figure out why not working... not good test method at the moment
-        ///
-        [TestMethod]
-        public void GetBadgeByInt_ShouldReturnTrue()
-        {
-            Badge badge =new Badge();
-            Badge_Repo repo = new Badge_Repo();
+    //        repo.CreateBadge(badge.BadgeID, badge.DoorNames );
+    //        Dictionary<int, List<string>> directory = repo.GetBadges();
+    //        bool directoryHasContent = directory.ContainsKey(badge.BadgeID);
+    //        Assert.IsTrue(directoryHasContent);
+    //    }
+    //    /////run thru debugger again to figure out why not working... not good test method at the moment
+    //    ///
+    //    [TestMethod]
+    //    public void GetBadgeByInt_ShouldReturnTrue()
+    //    {
+    //        Badge badge = new Badge();
+    //        List<string> doors = new List<string>() {
+    //            "A1", "B2", "C3"};
+    //        Badge_Repo repo = new Badge_Repo();
 
-            Dictionary<int, List<string>> ListOfDoors = new Dictionary<int, List<string>>();
+    //        repo.CreateBadge(001, doors);
+    //        int idVal = 001;
 
-            ListOfDoors.Add(badge.BadgeID, badge.DoorNames);
-            ListOfDoors.ContainsKey(badge.BadgeID);
-            Assert.IsTrue(ListOfDoors.ContainsKey(badge.BadgeID));
+
+    //        // Dictionary<int, List<string>> ListOfDoors = new Dictionary<int, List<string>>();
+
+    //        //ListOfDoors.Add(badge.BadgeID, badge.DoorNames);
+    //        //repo.GetBadgeByID(badge.BadgeID);
+    //        //ListOfDoors.ContainsKey(badge.BadgeID);
+    //        //Assert.IsTrue(ListOfDoors.ContainsKey(badge.BadgeID));
+    //        Badge searchResult = repo.GetBadgeByID(idVal); 
             
 
-        }
-    }
+    //    }
+    //    [TestMethod]
+    //    public void UpdateExistingDictionary_ShouldReturnTrue()
+    //    {
+
+    //    }
+    //}
 
 
-} 
+//} 

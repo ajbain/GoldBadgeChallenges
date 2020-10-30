@@ -45,23 +45,23 @@ namespace ChallengeFiveTests
 
         [TestMethod]
         public void GetCustomerByLastName_ShouldReturnCorrectString()
+
         {
-            {
-                Customer customer = new Customer("John", "Doe", CustType.Past);
-                Customer_Repo repo = new Customer_Repo();
+            Customer customer = new Customer("John", "Doe", CustType.Past);
+            Customer_Repo repo = new Customer_Repo();
 
-                repo.AddCustomer(customer);
-                string lastName = "Doe";
+            repo.AddCustomer(customer);
+            string lastName = "Doe";
 
-                Customer searchResult = repo.GetCustomerByLastName(lastName);
+            Customer searchResult = repo.GetCustomerByLastName(lastName);
 
 
-                Assert.AreEqual(lastName, searchResult.LastName);
+            Assert.AreEqual(lastName, searchResult.LastName);
 
-            }
-
-           
         }
+
+
+
         [TestMethod]
         public void UpdateExistingCustomer_ShouldReturnTrue()
         {
@@ -89,6 +89,6 @@ namespace ChallengeFiveTests
 
             Assert.IsTrue(removeResults);
         }
-        
+
     }
 }

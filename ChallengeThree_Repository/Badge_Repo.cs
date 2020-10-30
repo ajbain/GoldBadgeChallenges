@@ -9,59 +9,58 @@ namespace ChallengeThree_Repository
     public class Badge_Repo
     {
         //private List<Badge> _badgeDirectory = new List<Badge>();
-        private Dictionary<int, List<string>> _badgeDictionary = new Dictionary<int, List<string>>();
-        
+        private Dictionary<int, Badge> _badgeDictionary = new Dictionary<int, Badge>();
+
         //create
-        public bool CreateBadge(int badgeId, List<string> doorNames)
+        public bool AddBadgetoDictionary(int badgeID, List<Badge>badges )
         {
             int startingCount = _badgeDictionary.Count;
-            Badge badge = new Badge(badgeId, doorNames);
-            _badgeDictionary.Add(badge.BadgeID, badge.DoorNames);
+            _badgeDictionary.Add(badgeID, badges);
             bool wasAdded = (_badgeDictionary.Count > startingCount) ? true : false;
             return wasAdded;
         }
-        
-        //read badge
-        public Dictionary<int, List<string>> GetBadges()
+              
+        ////read badge
+        public Dictionary<int, List<Badge>> GetBadges()
         {
-            return _badgeDictionary;
+            return _badgeDirectory;
         }
 
-        //read badge by id??
+        ////read badge by id??
 
-        public List<string> GetBadgeByID(int ID)
-        {
-            if (_badgeDictionary.ContainsKey(ID))
-            {
-                return _badgeDictionary[ID];
-            }
-            else
-            {
-                return null;
-            }
-            //foreach (Badge badge in _badgeDirectory)
-            //{
-            //    if (badge.BadgeID == ID)
-            //    {
-            //        return badge;
-            //    }
-            //}
+        //public List<string> GetBadgeByID(int ID)
+        //{
+        //    if (_badgeDictionary.ContainsKey(ID))
+        //    {
+        //        return _badgeDictionary[ID];
+        //    }
+        //    else
+        //    {
+        //        return null;
+        //    }
+        //    //foreach (Badge badge in _badgeDirectory)
+        //    //{
+        //    //    if (badge.BadgeID == ID)
+        //    //    {
+        //    //        return badge;
+        //    //    }
+        //    //}
             
-        }
-        //updateBadge
-        public void UpdateDictionaryEntry(int idNum, List<string> values)
-        {
-            //List<string> doorNames = GetBadgeByID(idNum); 
-            if(_badgeDictionary.ContainsKey(idNum))
-            {
-                _badgeDictionary[idNum] = values;
+        //}
+        ////updateBadge
+        //public void UpdateDictionaryEntry(int idNum, List<string> values)
+        //{
+        //    //List<string> doorNames = GetBadgeByID(idNum); 
+        //    if(_badgeDictionary.ContainsKey(idNum))
+        //    {
+        //        _badgeDictionary[idNum] = values;
                 
-            }
-            else
-            {
-                _badgeDictionary.Add(idNum, values);
-            }
-        }
+        //    }
+        //    else
+        //    {
+        //        _badgeDictionary.Add(idNum, values);
+        //    }
+        //}
 
 
 
