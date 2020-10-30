@@ -22,9 +22,9 @@ namespace ChallengeThree_Repository
         }
         
         //read badge
-        public List<Badge> GetBadges()
+        public Dictionary<int, List<string>> GetBadges()
         {
-            return _badgeDirectory;
+            return _badgeDictionary;
         }
 
 

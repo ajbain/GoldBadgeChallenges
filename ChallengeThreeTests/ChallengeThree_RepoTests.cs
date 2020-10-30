@@ -26,10 +26,11 @@ namespace ChallengeThreeTests
             Badge_Repo repo = new Badge_Repo();
 
             repo.CreateBadge(badge.BadgeID, badge.DoorNames );
-            List<Badge> directory = repo.GetBadges();
-            bool directoryHasContent = directory.Contains(badge);
+            Dictionary<int, List<string>> directory = repo.GetBadges();
+            bool directoryHasContent = directory.ContainsKey(badge.BadgeID);
             Assert.IsTrue(directoryHasContent);
         }
+        /////run thru debugger again to figure out why not working... not good test method at the moment
     }
 
 
