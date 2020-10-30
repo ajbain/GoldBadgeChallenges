@@ -54,9 +54,7 @@ namespace ChallengeSixTests
                 Assert.AreEqual(make, searchResult.Make);
 
             }
-
-
-        }
+       }
         [TestMethod]
         public void UpdateExistingVehicle_ShouldReturnTrue()
         {

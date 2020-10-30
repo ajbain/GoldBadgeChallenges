@@ -49,6 +49,19 @@ namespace ChallengeThree_Repository
             
         }
         //updateBadge
+        public void UpdateDictionaryEntry(int idNum, List<string> values)
+        {
+            //List<string> doorNames = GetBadgeByID(idNum); 
+            if(_badgeDictionary.ContainsKey(idNum))
+            {
+                _badgeDictionary[idNum] = values;
+                
+            }
+            else
+            {
+                _badgeDictionary.Add(idNum, values);
+            }
+        }
 
 
 

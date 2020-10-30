@@ -35,15 +35,15 @@ namespace ChallengeThreeTests
         [TestMethod]
         public void GetBadgeByInt_ShouldReturnTrue()
         {
+            Badge badge =new Badge();
             Badge_Repo repo = new Badge_Repo();
-            List<string> listOfDoors = new List<string>()
-            {
-                "a2",
-                "b1"
-            };
-            Badge badge = new Badge();
-            repo.CreateBadge(badge.BadgeID, listOfDoors);
-            int idNum = 001;
+
+            Dictionary<int, List<string>> ListOfDoors = new Dictionary<int, List<string>>();
+
+            ListOfDoors.Add(badge.BadgeID, badge.DoorNames);
+            ListOfDoors.ContainsKey(badge.BadgeID);
+            Assert.IsTrue(ListOfDoors.ContainsKey(badge.BadgeID));
+            
 
         }
     }
