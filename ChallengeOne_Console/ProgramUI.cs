@@ -36,14 +36,24 @@ namespace ChallengeOne_Console
             {
 
                 Console.Clear();
-
+                Console.WriteLine(" ___   _  _______  __   __  _______  ______   _______    _______  _______  _______  _______  __  ");
+                Console.WriteLine("|   | | ||       ||  |_|  ||       ||      | |       |  |       ||   _   ||       ||       ||  | ");
+                Console.WriteLine("|   |_| ||   _   ||       ||   _   ||  _    ||   _   |  |       ||  |_|  ||    ___||    ___||  | ");
+                Console.WriteLine("|      _||  | |  ||       ||  | |  || | |   ||  | |  |  |       ||       ||   |___ |   |___ |  | ");
+                Console.WriteLine("|     |_ |  |_|  ||       ||  |_|  || |_|   ||  |_|  |  |      _||       ||    ___||    ___||__| ");
+                Console.WriteLine("|    _  ||       || ||_|| ||       ||       ||       |  |     |_ |   _   ||   |    |   |___  __  ");
+                Console.WriteLine("|___| |_||_______||_|   |_||_______||______| |_______|  |_______||__| |__||___|    |_______||__| ");
+                Console.WriteLine("-------------------------------------------------------------------------------------------------");
                 Console.WriteLine("Welcome to Komodo Cafe Menu Organizer!");
-                Console.WriteLine("Please select the option you would like to use.");
-                Console.WriteLine("1. Show All Items on Menu");
-                Console.WriteLine("2. Find Items by Menu Number");
-                Console.WriteLine("3. Add a New Item");
-                Console.WriteLine("4. Delete a Menu Item");
-                Console.WriteLine("5. Exit");
+                Console.WriteLine("Please select the option you would like to use.".PadRight(3,' '));
+                Console.WriteLine("1. Show All Items on Menu".PadLeft(3, ' '));
+                Console.WriteLine("2. Find Items by Menu Number".PadLeft(3, ' '));
+                Console.WriteLine("3. Add a New Item".PadLeft(3, ' '));
+                Console.WriteLine("4. Delete a Menu Item".PadLeft(3, ' '));
+                Console.WriteLine("5. Exit".PadLeft(3, ' '));
+
+               
+                
 
                 string input = Console.ReadLine();
 
