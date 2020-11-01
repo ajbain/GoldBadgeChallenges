@@ -45,15 +45,15 @@ namespace ChallengeOne_Console
                 Console.WriteLine("|___| |_||_______||_|   |_||_______||______| |_______|  |_______||__| |__||___|    |_______||__| ");
                 Console.WriteLine("-------------------------------------------------------------------------------------------------");
                 Console.WriteLine("Welcome to Komodo Cafe Menu Organizer!");
-                Console.WriteLine("Please select the option you would like to use.".PadRight(3,' '));
+                Console.WriteLine("Please select the option you would like to use.".PadRight(3, ' '));
                 Console.WriteLine("1. Show All Items on Menu".PadLeft(3, ' '));
                 Console.WriteLine("2. Find Items by Menu Number".PadLeft(3, ' '));
                 Console.WriteLine("3. Add a New Item".PadLeft(3, ' '));
                 Console.WriteLine("4. Delete a Menu Item".PadLeft(3, ' '));
                 Console.WriteLine("5. Exit".PadLeft(3, ' '));
 
-               
-                
+
+
 
                 string input = Console.ReadLine();
 
@@ -85,10 +85,13 @@ namespace ChallengeOne_Console
             }
         }
 
-        private void DisplayItems(Menu  menu)
+        private void DisplayItems(Menu menu)
         {
 
-            Console.WriteLine($"{menu.MealNumber}        {menu.MealName}        {menu.Description}           {menu.Ingredients}          {menu.Price}  ");
+            //Console.WriteLine($"{menu.MealNumber}   {menu.MealName.PadRight(20, ' ')}{menu.Description.PadLeft(20, ' ')}{menu.Ingredients.PadRight(20, ' ' )}{menu.Price}");
+
+
+            Console.WriteLine(String.Format("{0, -10}  | {1, 10} | {2, 5} | {3, 5} | {4, 5}", menu.MealNumber, menu.MealName, menu.Description, menu.Ingredients, menu.Price));
         }
 
         private void ShowAllItems()
@@ -137,7 +140,8 @@ namespace ChallengeOne_Console
             Console.WriteLine("Please verify all information is correct when entering");
             Console.WriteLine("Please enter a Meal Number:");
             newMenu.MealNumber = Convert.ToInt32(Console.ReadLine());
-             
+            
+
 
             Console.WriteLine("Please enter a Meal Name:");
             newMenu.MealName = Console.ReadLine();
@@ -164,7 +168,7 @@ namespace ChallengeOne_Console
             }
 
         }
-        
+
         public void DeleteItemFromMenu()
         {
             Console.WriteLine("Here's a list of what is currently on the menu:");
@@ -174,7 +178,7 @@ namespace ChallengeOne_Console
             Console.Clear();
             Console.WriteLine("Enter the menu number of the item you'd like to delete:");
             string itemToDeleteAsString = Console.ReadLine();
-            
+
             int itemToDeleteAsInt = int.Parse(itemToDeleteAsString);
 
             Menu itemToDelete = _repo.GetMenuItemByNumber(itemToDeleteAsInt);

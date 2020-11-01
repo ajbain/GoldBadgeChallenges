@@ -61,6 +61,7 @@ namespace ChallengeSix_Console
                 switch (input)
                 {
                     case "1":
+                        //Console.WriteLine(String.Format("{0,-10} | {1,5} | {2,5} | {3,5} | {4,5} | {5,5)", "Vehicle Make", "Vehicle Model", "Vehicle Year", "Vehicle Mileage per Fill", "Vehicle Type", "Is Vehicle Green T/F"));
                         ShowAllVehicles();
                         //need to put in alphabetical order
                         break;
@@ -84,7 +85,7 @@ namespace ChallengeSix_Console
                         keepRunning = false;
                         break;
                     default:
-                        Console.WriteLine("Please enter a valid response (1-5)");
+                        Console.WriteLine("Please enter a valid response (1-6");
                         Console.ReadKey();
                         break;
                 }
@@ -94,7 +95,8 @@ namespace ChallengeSix_Console
         private void DisplayVehicles(Vehicle vehicle)
         {
 
-            Console.WriteLine($"{vehicle.Make}        {vehicle.Model}        {vehicle.Year}           {vehicle.MileagePerGallon}            {vehicle.VehicleType}         {vehicle.isGreen}  ");
+            
+            Console.WriteLine(String.Format("{0,-10} | {1, 5} | {2, 5} | {3, 5} | {4, 5} | {5, 5}" , vehicle.Make, vehicle.Model, vehicle.Year, vehicle.MileagePerGallon, vehicle.VehicleType, vehicle.isGreen) );
         }
 
         /// <summary>

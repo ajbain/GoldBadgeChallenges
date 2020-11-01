@@ -60,6 +60,10 @@ namespace _ChallengeFive_Console
 
                 Console.Clear();
 
+                Console.WriteLine("╦╔═┌─┐┌┬┐┌─┐┌┬┐┌─┐  ╦┌┐┌┌─┐┬ ┬┬─┐┌─┐┌┐┌┌─┐┌─┐  ╔═╗┬ ┬┌─┐┌┬┐┌─┐┌┬┐┌─┐┬─┐  ╔╦╗┌─┐┌┬┐┌─┐┌┐ ┌─┐┌─┐┌─┐");
+                Console.WriteLine("╠╩╗│ │││││ │ │││ │  ║│││└─┐│ │├┬┘├─┤││││  ├┤   ║  │ │└─┐ │ │ ││││├┤ ├┬┘   ║║├─┤ │ ├─┤├┴┐├─┤└─┐├┤ ");
+                Console.WriteLine("╩ ╩└─┘┴ ┴└─┘─┴┘└─┘  ╩┘└┘└─┘└─┘┴└─┴ ┴┘└┘└─┘└─┘  ╚═╝└─┘└─┘ ┴ └─┘┴ ┴└─┘┴└─  ═╩╝┴ ┴ ┴ ┴ ┴└─┘┴ ┴└─┘└─┘");
+
                 Console.WriteLine("Welcome to Komodo Insurance Customer Database.");
                 Console.WriteLine("Please select the option you would like to use.");
                 Console.WriteLine("1. Show All Customers");
@@ -97,7 +101,7 @@ namespace _ChallengeFive_Console
                         keepRunning = false;
                         break;
                     default:
-                        Console.WriteLine("Please enter a valid response (1-5)");
+                        Console.WriteLine("Please enter a valid response (1-6)");
                         Console.ReadKey();
                         break;
                 }
@@ -107,7 +111,8 @@ namespace _ChallengeFive_Console
         private void DisplayCustomers(Customer customer)
         {
              
-            Console.WriteLine($"{customer.FirstName}        {customer.LastName}        {customer.CustType}           {customer.EmailType}    ");
+            //Console.WriteLine($"{customer.FirstName}        {customer.LastName}        {customer.CustType}           {customer.EmailType}    ");
+            Console.WriteLine(String.Format(" {0,-10} | {1,5} | {2,5} | {3,5}" , customer.FirstName, customer.LastName.PadRight(5,' '), customer.CustType, customer.EmailType));
         }
 
         private void ShowAllCustomers()
