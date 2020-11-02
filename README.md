@@ -17,12 +17,9 @@ C#
 Visual Studio Community 2019 Version 16.7.5
 Microsoft .Net Framework Version 4.8.04084
 
-## Illustrations
-
-## Scope of Functionalities
 
 ## Examples of Use
-This 
+This is a simple number menu to use. Users can first select options 1-5 to see different parts of the 'crud' application. Once they have done so, they can add, read, update, or delete existing parts of the code. There is seed code to all challenges, so they start with information that the user can change/delete. 
 
 ## Project Status
 This project is under development. This will continued to be polished over time and as errors are figured out. 
